@@ -7,11 +7,7 @@ function Login({ onLogin }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username === 'admin' && password === 'admin') {
-      onLogin();
-    } else {
-      alert('Invalid credentials');
-    }
+    onLogin(); 
   };
 
   return (
