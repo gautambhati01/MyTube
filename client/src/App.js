@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
@@ -7,7 +6,6 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
@@ -21,12 +19,7 @@ const App = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username === 'user' && password === '12345') {
-      setIsLoggedIn(true);
-      setError('');
-    } else {
-      setError('Invalid username or password');
-    }
+    setIsLoggedIn(true); // logs in no matter what
   };
 
   if (!isLoggedIn) {
@@ -47,7 +40,6 @@ const App = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button type="submit">Login</button>
-          {error && <div className="error-message">{error}</div>}
         </form>
       </div>
     );
@@ -100,5 +92,3 @@ const App = () => {
 };
 
 export default App;
-
-
